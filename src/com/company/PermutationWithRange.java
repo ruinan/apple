@@ -6,10 +6,13 @@ public class PermutationWithRange {
 
     // 有重复
     public List<String> permuation (char[] chars, int s, int e) {
-
+        List<String> res = new ArrayList<>();
+        if (s > e || s > chars.length) {
+            return res;
+        }
         Arrays.sort(chars);
         boolean[] visited = new boolean[chars.length];
-        List<String> res = new ArrayList<>();
+
         helper (res, visited, new StringBuilder(), s, e, chars);
         return res;
     }

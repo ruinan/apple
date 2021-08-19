@@ -9,6 +9,6 @@ public class Main {
 
     private static void testPermuation() {
         PermutationWithRange permutationWithRange = new PermutationWithRange();
-        System.out.println(permutationWithRange.permuation(new char[]{'a','a', 'b', 'c'}, 2, 3));
+        System.out.println(permutationWithRange.permuation(new char[]{'a','a', 'b', 'c'}, 0, 3));
     }
 }
