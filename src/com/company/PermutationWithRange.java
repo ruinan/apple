@@ -5,8 +5,8 @@ import java.util.*;
 public class PermutationWithRange {
 
     // 有重复
-    public List<String> permuation (char[] chars, int s, int e) {
-        List<String> res = new ArrayList<>();
+    public Map<Integer, List<String>> permuation (char[] chars, int s, int e) {
+        Map<Integer, List<String>> res = new HashMap<>();
         if (s > e || s > chars.length) {
             return res;
         }
@@ -17,10 +17,11 @@ public class PermutationWithRange {
         return res;
     }
 
-    void helper (List<String> res, boolean[] visited, StringBuilder sb, int s, int e, char[] chars) {
+    void helper (  Map<Integer, List<String>> res, boolean[] visited, StringBuilder sb, int s, int e, char[] chars) {
         int length = sb.length();
         if (sb.length() >= s && sb.length() <= e) {
-            res.add(sb.toString());
+            res.putIfAbsent(sb.length(), new ArrayList<>());
+            res.get(sb.length()).add(sb.toString());
             if (sb.length() == e) {
                 return;
             }

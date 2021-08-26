@@ -1,0 +1,25 @@
+Spring
+1. Java Bean:
+    在Java中，有很多class的定义都符合这样的规范：
+
+    若干private实例字段；
+    通过public方法来读写实例字段。
+    例如：
+
+    public class Person {
+        private String name;
+        private int age;
+
+        public String getName() { return this.name; }
+        public void setName(String name) { this.name = name; }
+
+        public int getAge() { return this.age; }
+        public void setAge(int age) { this.age = age; }
+    }
+    如果读写方法符合以下这种命名规范：
+
+    // 读方法:
+    public Type getXyz()
+    // 写方法:
+    public void setXyz(Type value)
+    那么这种class被称为JavaBean：
